@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+</head>
+<body>
+    <h1>Love Calculator</h1>
+    <label for="name1">Enter your name:</label>
+    <input type="text" id="name1" name="name1"><br><br>
+    <label for="name2">Enter your partner's name:</label>
+    <input type="text" id="name2" name="name2"><br><br>
+    <button onclick="calculateLove()">Calculate Love</button>
+    <p id="loveResult"></p>
+
+    <script>
+        function calculateLove() {
+            const name1 = document.getElementById("name1").value;
+            const name2 = document.getElementById("name2").value;
+            const loveScore = Math.random() * 100;
+
+            if (loveScore > 80) {
+                document.getElementById("loveResult").innerText = `Your love score is ${loveScore.toFixed(2)}%. You love each other like Kanye loves Kanye.`;
+            } else if (loveScore > 50) {
+                document.getElementById("loveResult").innerText = `Your love score is ${loveScore.toFixed(2)}%. You go together like coke and mentos.`; 
+            } else if (loveScore > 30) {
+                document.getElementById("loveResult").innerText = `Your love score is ${loveScore.toFixed(2)}%. You are alright together.`; 
+            } else {
+                document.getElementById("loveResult").innerText = `Your love score is ${loveScore.toFixed(2)}%. You'll be forever alone.`;   
+            }
+        }
+    </script>
+</body>
+</html>

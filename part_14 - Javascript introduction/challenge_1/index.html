@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text case</title>
+</head>
+<body>
+    <h1>Change Text Case</h1>
+    <p>Some Text</p>
+    <button onclick="changeTextCase()">Change Text Case</button>
+    
+    
+    <script>
+        function changeTextCase() {
+            const paragraph = document.querySelector('p');
+            const text = paragraph.textContent;
+            const isUpperCase = text === text.toUpperCase();
+            paragraph.textContent = isUpperCase ? text.toLowerCase() : text.toUpperCase();
+        }
+    </script>
+</body>
+</html>
