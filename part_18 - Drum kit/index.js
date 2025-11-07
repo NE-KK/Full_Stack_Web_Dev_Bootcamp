@@ -5,7 +5,7 @@ for (var i = 0; i < numberOfButtons; i++) {
         // alert("button clicked")
         var buttonInnerHTML = this.innerHTML;
         makeSound(buttonInnerHTML);
-
+        buttonAnimation(buttonInnerHTML);
     })
 }
 
@@ -15,6 +15,7 @@ document.addEventListener("keydown", function(event) {
     // console.log(event);
     var keyPressed = event.key;
     makeSound(keyPressed);
+    buttonAnimation(keyPressed);
 });
 
 
@@ -52,3 +53,10 @@ function makeSound(key) {
     }
 }
 
+function buttonAnimation(currentKey) {
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function() {
+        activeButton.classList.remove("pressed");
+    }, 100);
+}
